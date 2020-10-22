@@ -46,6 +46,7 @@
 		<!-- More developers ... -->
 	</developers>
 
+
     <dependencies>
         <!-- Spring and Spring Boot dependencies -->
         <dependency>
