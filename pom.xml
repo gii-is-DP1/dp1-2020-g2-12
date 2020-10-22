@@ -32,6 +32,7 @@
 
     </properties>
 
+
 	<developers>
 		<developer>
 			<id>Saked</id>
@@ -43,9 +44,21 @@
 			</roles>
 		</developer>
 		
-		<!-- More developers ... -->
+ 		<developer>
+ 			<id>Fer</id>
+ 			<name>Fernando</name>
+ 			<email>fersilleo@alum.us.es</email>
+ 			<roles>
+ 				<role>leader</role>
+ 			</roles>
+ 			<properties>
+ 				<picUrl>
+					
+				</picUrl>
+ 			</properties>
+ 		</developer>
 	</developers>
-
+	
 
     <dependencies>
         <!-- Spring and Spring Boot dependencies -->
