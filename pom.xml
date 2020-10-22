@@ -41,8 +41,7 @@
 			<roles>
 				<role>leader</role>
 			</roles>
-		</developer>
-		
+		</developer>	
 		<!-- More developers ... -->
 	</developers>
 
