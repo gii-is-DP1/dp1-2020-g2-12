@@ -7,7 +7,7 @@ INSERT INTO authorities(id,username,authority) VALUES (2,'owner1','owner');
 -- One vet user, named vet1 with passwor v3t
 INSERT INTO users(username,password,enabled) VALUES ('vet1','v3t',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (3,'vet1','veterinarian');
--- One owner user, named fers with passwor 0wn3r
+-- One owner user, named fersilleo with passwor 0wn3r
 INSERT INTO users(username,password,enabled) VALUES ('fersilleo','fslowner',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (4,'fersilleo','owner');
 
