@@ -7,9 +7,12 @@ INSERT INTO authorities(id,username,authority) VALUES (2,'owner1','owner');
 -- One vet user, named vet1 with passwor v3t
 INSERT INTO users(username,password,enabled) VALUES ('vet1','v3t',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (3,'vet1','veterinarian');
+-- One owner user, named fersilleo with passwor 0wn3r
+INSERT INTO users(username,password,enabled) VALUES ('fersilleo','fslowner',TRUE);
+INSERT INTO authorities(id,username,authority) VALUES (4,'fersilleo','owner');
 -- One owner user, named jualeoval with passwor p4ss
 INSERT INTO users(username,password,enabled) VALUES ('jualeoval','p4ss',TRUE);
-INSERT INTO authorities(id,username,authority) VALUES (4,'jualeoval','owner');
+INSERT INTO authorities(id,username,authority) VALUES (5,'jualeoval','owner');
 
 INSERT INTO vets VALUES (1, 'James', 'Carter');
 INSERT INTO vets VALUES (2, 'Helen', 'Leary');
@@ -45,8 +48,8 @@ INSERT INTO owners VALUES (7, 'Jeff', 'Black', '1450 Oak Blvd.', 'Monona', '6085
 INSERT INTO owners VALUES (8, 'Maria', 'Escobito', '345 Maple St.', 'Madison', '6085557683', 'owner1');
 INSERT INTO owners VALUES (9, 'David', 'Schroeder', '2749 Blackhawk Trail', 'Madison', '6085559435', 'owner1');
 INSERT INTO owners VALUES (10, 'Carlos', 'Estaban', '2335 Independence La.', 'Waunakee', '6085555487', 'owner1');
-INSERT INTO owners VALUES (11, 'Juanjo', 'Leon', '4 North St.', 'Madison', '6085553776', 'jualeoval');
-
+INSERT INTO owners VALUES (11, 'Fernando', 'Silva', '4 Privet Drive', 'Haddonfield', '6085553032', 'fersilleo');
+INSERT INTO owners VALUES (12, 'Juanjo', 'Leon', '7 North St.', 'Madison', '6085553776', 'jualeoval');
 
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (1, 'Leo', '2010-09-07', 1, 1);
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (2, 'Basil', '2012-08-06', 6, 2);
@@ -61,7 +64,8 @@ INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (10, 'Mulligan', '2
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (11, 'Freddy', '2010-03-09', 5, 9);
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (12, 'Lucky', '2010-06-24', 2, 10);
 INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (13, 'Sly', '2012-06-08', 1, 10);
-INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (14, 'Laurie', '2012-07-12', 1, 11);
+INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (14, 'Lisa', '2019-10-23', 6, 11);
+INSERT INTO pets(id,name,birth_date,type_id,owner_id) VALUES (15, 'Laurie', '2012-07-12', 1, 11);
 
 
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (1, 7, '2013-01-01', 'rabies shot');
