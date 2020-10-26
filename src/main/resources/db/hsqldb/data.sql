@@ -13,6 +13,9 @@ INSERT INTO authorities(id,username,authority) VALUES (4,'fersilleo','owner');
 -- One owner user, named jualeoval with passwor p4ss
 INSERT INTO users(username,password,enabled) VALUES ('jualeoval','p4ss',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (5,'jualeoval','owner');
+-- One owner user, named josmarsan24 with passwor 0wn3r
+INSERT INTO users(username,password,enabled) VALUES ('josmarsan24','0wn3r',TRUE);
+INSERT INTO authorities(id,username,authority) VALUES (6,'josmarsan24','owner');
 
 INSERT INTO vets VALUES (1, 'James', 'Carter');
 INSERT INTO vets VALUES (2, 'Helen', 'Leary');

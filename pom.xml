@@ -67,6 +67,16 @@
 				<role>leader</role>
 			</roles>
 		</developer>
+		
+		<developer>
+			<id>josem</id>
+			<name>Jose</name>
+			<email>josmarsan24@alum.us.es</email>
+			<url></url>
+			<roles>
+				<role>leader</role>
+			</roles>
+		</developer>
 	</developers>
 
 
