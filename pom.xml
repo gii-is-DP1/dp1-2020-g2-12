@@ -34,6 +34,7 @@
 
 
 	<developers>
+    
 		<developer>
 			<id>Saked</id>
 			<name>Julián</name>
@@ -42,7 +43,7 @@
 			<roles>
 				<role>leader</role>
 			</roles>
-		</developer>
+		</developer>	
 
 		<developer>
 			<id>Fer</id>
@@ -53,12 +54,11 @@
 			</roles>
 			<properties>
 				<picUrl>
-
 				</picUrl>
-
  			</properties>
  		</developer>
  		
+
  		<developer>
  			<id>Lui</id>
  			<name>Luis</name>
@@ -72,6 +72,7 @@
 				</picUrl>
  			</properties>
  		</developer>
+
       
       <developer>
 			<id>Jualeoval</id>
@@ -83,6 +84,7 @@
 			</roles>
 		</developer>
  		
+
 	</developers>
 	
 	
