@@ -170,8 +170,9 @@
             <artifactId>bootstrap</artifactId>
             <version>${webjars-bootstrap.version}</version>
         </dependency>
-=======
+
 			</properties>
+			</dependencies>
 		
 
 
