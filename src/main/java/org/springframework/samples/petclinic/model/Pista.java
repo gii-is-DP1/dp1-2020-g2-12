@@ -10,5 +10,4 @@ public class Pista extends NamedEntity{
 
 	private Integer aforo;
 	private String ciudad;
-	private String nombre;
 }

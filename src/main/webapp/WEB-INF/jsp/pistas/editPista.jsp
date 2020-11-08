@@ -12,8 +12,7 @@
 
         <form:form modelAttribute="pista" class="form-horizontal" action="/pistas/save">
             <div class="form-group has-feedback">
-            <petclinic:inputField label="Name" name="name"/>
-                <petclinic:inputField label="Nombre" name="nombre"/>
+            <petclinic:inputField label="Nombre" name="name"/>
                 <petclinic:inputField label="Ciudad" name="ciudad"/>
                 <petclinic:inputField label="Aforo" name="aforo"/>
             </div>

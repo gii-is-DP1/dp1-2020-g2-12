@@ -24,7 +24,7 @@
             <tr>
                 
                 <td>
-                    <c:out value="${pista.nombre}"/>
+                    <c:out value="${pista.name}"/>
                 </td>
                 <td>
                     <c:out value="${pista.ciudad}"/>
