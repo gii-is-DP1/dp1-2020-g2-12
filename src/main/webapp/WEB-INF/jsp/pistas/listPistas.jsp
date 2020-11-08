@@ -16,7 +16,7 @@
             <th style="width: 150px;">Nombre</th>
             <th>Ciudad</th>
             <th>Aforo</th>
-            
+            <th> Actions</th>
         </tr>
         </thead>
         <tbody>
@@ -33,11 +33,19 @@
                     <c:out value="${pista.aforo}"/>
                 </td>
                 
-                
-
+                 <td>
+                                    <spring:url value="/pistas/delete/{pistaId}" var="pistaUrl">
+                        <spring:param name="pistaId" value="${pista.id}"/>
+                    </spring:url>
+                    <a href="${fn:escapeXml(pistaUrl)}">Delete</a>
+                </td>
                 
             </tr>
         </c:forEach>
         </tbody>
     </table>
+    
+    <sec:authorize access="hasAuthority('admin')">
+		<a class="btn btn-default" href='<spring:url value="/pistas/new" htmlEscape="true"/>'>Añadir pista</a>
+	</sec:authorize>
 </petclinic:layout>
