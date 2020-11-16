@@ -84,15 +84,19 @@
 			</roles>
 		</developer>
 
+
+
 		<developer>
 			<id>josmarsan24</id>
 			<name>jose</name>
+
 			<email>josmarsan24@alum.us.es</email>
 			<url></url>
 			<roles>
 				<role>leader</role>
 			</roles>
 		</developer>
+
 
 
 	</developers>
