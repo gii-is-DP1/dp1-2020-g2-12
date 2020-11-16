@@ -14,8 +14,6 @@ INSERT INTO authorities(id,username,authority) VALUES (4,'fersilleo','owner');
 INSERT INTO users(username,password,enabled) VALUES ('jualeoval','p4ss',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (5,'jualeoval','owner');
 -- One owner user, named josmarsan24 with passwor 0wn3r
-INSERT INTO users(username,password,enabled) VALUES ('josmarsan24','0wn3r',TRUE);
-INSERT INTO authorities(id,username,authority) VALUES (6,'josmarsan24','owner');
 
 INSERT INTO users(username,password,enabled) VALUES ('luicharom','luiowner',TRUE);
 INSERT INTO authorities(id,username,authority) VALUES (6,'luicharom','owner');
