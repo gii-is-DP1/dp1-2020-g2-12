@@ -15,7 +15,7 @@ import lombok.Data;
 public class Torneo extends NamedEntity{
 
 	
-	//cuando se importe deportista cambiar la clase
+	//cuando se importe deportista cambiar la clase, cuando se inicialize que participantes sea un cojunto vacio
 	//@Column(name = "participantes")
 	//private Set<Persona> participantes;
 	@Column(name = "fecha_inicio")        
