@@ -1,5 +1,6 @@
 package org.springframework.samples.petclinic.service;
 
+import java.util.HashSet;
 import java.util.Optional;
 
 import javax.validation.Valid;
@@ -33,6 +34,7 @@ public class TorneoService {
 	}
 
 	public void save(Torneo torneo) {
+		torneo.setParticipantes(new HashSet<>());
 		torneoRepo.save(torneo);
 		
 	}

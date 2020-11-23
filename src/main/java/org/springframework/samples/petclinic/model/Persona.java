@@ -1,18 +1,24 @@
 package org.springframework.samples.petclinic.model;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.MappedSuperclass;
 import javax.validation.constraints.NotEmpty;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import lombok.Data;
 
 
 
-@MappedSuperclass
 
+//@MappedSuperclass
+@Data
+@Entity
 public class Persona extends BaseEntity{
 	
 	@Column(name = "nombre")
