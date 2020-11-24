@@ -6,6 +6,7 @@
 
 
 <petclinic:layout pageName="torneos">
+
 <jsp:attribute name="customScript">
         <script>
             $(function () {
