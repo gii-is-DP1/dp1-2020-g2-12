@@ -33,23 +33,23 @@
 
     <table class="table table-striped">
         <c:forEach var="athlete" items="${entrenador.athletes}">
-            <tr>
-                <td valign="top">
-                    <dl class="dl-horizontal">
-                        <dt>Name</dt>
-                        <dd><c:out value="${athlete.firstName}"/></dd>                        
-                    </dl>
-                </td>
-			</tr>
-            <tr>
-				<td>
-				 	<spring:url value="/entrenadores/{entrenadorId}/athletes/{athleteId}/edit" var="petUrl">
-                    	<spring:param name="entrenadorId" value="${entrenador.id}"/>
-                        <spring:param name="athleteId" value="${athlete.id}"/>
-                    </spring:url>
-                    <a href="${fn:escapeXml(petUrl)}">Edit Athlete</a>
-				</td>            
-            </tr>
+       <h2><b><c:out value="${athlete.firstName} ${athlete.lastName}"/></b></h2>
+
+
+    <table class="table table-striped">
+        <tr>
+            <th>Height</th>
+            <td><c:out value="${athlete.height}"/></td>
+        </tr>
+        <tr>
+            <th>Weight</th>
+            <td><c:out value="${athlete.weight}"/></td>
+        </tr>
+        <tr>
+            <th>Genero</th>
+            <td><c:out value="${athlete.genero}"/></td>
+        </tr>
+    </table>
         </c:forEach>
     </table>
 

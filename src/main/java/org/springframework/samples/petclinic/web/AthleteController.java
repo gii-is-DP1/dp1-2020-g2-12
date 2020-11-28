@@ -113,7 +113,7 @@ public class AthleteController {
 		
 	}
 	
-	@GetMapping( value = "/athlete")
+	@GetMapping( value = "/athletes")
 	public String athletesList(ModelMap modelMap) {
 		String vista = "athletes/listAthletes";
 		Iterable<Athlete> athletes = athleteService.findAll();
