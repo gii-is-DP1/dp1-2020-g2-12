@@ -34,7 +34,7 @@
                     <c:out value="${owner.city}"/>
                 </td>
                 <td>
-                    <c:out value="${owner.telephone}"/>
+                  <c:out value="${owner.telephone}"/>
                 </td>
                 <td>
                     <c:forEach var="pet" items="${owner.pets}">
