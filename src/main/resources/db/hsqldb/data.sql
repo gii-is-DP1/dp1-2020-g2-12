@@ -101,7 +101,7 @@ INSERT INTO entrenadores(id, first_name, last_name) VALUES (2, 'Rosa', 'Fernánd
 
 INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (1,'Lucas','Martínez',1.80,80.0,'HOMBRE',1);
 INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (2,'María','Martínez',1.80,80.0,'MUJER',2);
-INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (3,'Carlos','Martínez',1.80,80.0,'HOMBRE',null);
+INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (3,'Carlos','Martínez',1.80,80.0,'HOMBRE',1);
 
 
 

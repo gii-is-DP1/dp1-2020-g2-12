@@ -49,8 +49,21 @@
             <th>Genero</th>
             <td><c:out value="${athlete.genero}"/></td>
         </tr>
+        
     </table>
+    <spring:url value="/entrenadores/{entrenadorId}/delete/{athleteId}" var="athletedelUrl">
+                        <spring:param name="athleteId" value="${athlete.id}"/>
+                        <spring:param name="entrenadorId" value="${athlete.entrenador.id}"/>
+                        
+                    </spring:url>
+                    <a href="${fn:escapeXml(athletedelUrl)}" class="btn btn-default">Eliminar</a><br/>
+    <br/>
         </c:forEach>
     </table>
+   
+    <spring:url value="{entrenadorId}/add" var="addAthleteUrl">
+        <spring:param name="entrenadorId" value="${entrenador.id}"/>
+    </spring:url>
+    <a href="${fn:escapeXml(addAthleteUrl)}" class="btn btn-default">Add Athlete</a>
 
 </petclinic:layout>

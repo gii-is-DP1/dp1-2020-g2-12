@@ -23,8 +23,7 @@ public class EntrenadorService {
 	public Iterable<Entrenador> findAll() {
 		return entrenadorRespository.findAll();
 		}
-	
-	
+
 
 	public void delete(Entrenador entrenador) {
 		entrenadorRespository.delete(entrenador);
@@ -44,5 +43,9 @@ public class EntrenadorService {
 		
 		entrenadorRespository.deleteById(entrenadorId);
 	}
+
+
+	
+	
 
 }

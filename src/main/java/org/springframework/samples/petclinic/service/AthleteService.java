@@ -25,8 +25,6 @@ public class AthleteService {
 		return athleteRespository.findAll();
 		}
 	
-	
-
 	public void delete(Athlete athlete) {
 		athleteRespository.delete(athlete);
 	}
@@ -49,6 +47,21 @@ public class AthleteService {
 	public Set<Athlete> findAthleteByEntrenadorId(int entrenadorId) {
 		return athleteRespository.findByEntrenadorId(entrenadorId);
 	}
+
+	public void eliminarEntrenadorDeAtleta(int i) {
+		athleteRespository.eliminarEntrenadorDeAtleta(i);
+
+	}
+
+	public Set<Athlete> buscarAtletaSinEntrenador() {
+		return athleteRespository.buscarAtletaSinEntrenador();
+	}
+
+	public void añadirEntrenadorDeAtleta(int athleteId, int entrenadorId) {
+		athleteRespository.añadirEntrenadorDeAtleta(athleteId,entrenadorId);
+		
+	}
+
 }
 
 	
