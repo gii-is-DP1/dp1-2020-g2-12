@@ -5,4 +5,6 @@ import org.springframework.samples.petclinic.model.Entrenador;
 
 public interface EntrenadorRepository extends CrudRepository<Entrenador, Integer>{
 
+	
+	
 }

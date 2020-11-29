@@ -95,4 +95,13 @@ INSERT INTO visits(id,pet_id,visit_date,description) VALUES (2, 8, '2013-01-02',
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (4, 7, '2013-01-04', 'spayed');
 
+INSERT INTO entrenadores(id, first_name, last_name) VALUES (1, 'Paco', 'Fernández');
+INSERT INTO entrenadores(id, first_name, last_name) VALUES (2, 'Rosa', 'Fernández');
+
+
+INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (1,'Lucas','Martínez',1.80,80.0,'HOMBRE',1);
+INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (2,'María','Martínez',1.80,80.0,'MUJER',2);
+INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (3,'Carlos','Martínez',1.80,80.0,'HOMBRE',null);
+
+
 

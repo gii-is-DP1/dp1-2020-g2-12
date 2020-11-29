@@ -2,6 +2,7 @@ package org.springframework.samples.petclinic.web;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Set;
 
 import javax.validation.Valid;
 
@@ -10,6 +11,7 @@ import org.springframework.samples.petclinic.model.Athlete;
 import org.springframework.samples.petclinic.model.Entrenador;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
+import org.springframework.samples.petclinic.service.AthleteService;
 import org.springframework.samples.petclinic.service.AuthoritiesService;
 import org.springframework.samples.petclinic.service.EntrenadorService;
 import org.springframework.samples.petclinic.service.OwnerService;
@@ -32,10 +34,12 @@ public class EntrenadorController {
 	private static final String VIEWS_ENTRENADOR_CREATE_OR_UPDATE_FORM = "entrenadores/createOrUpdateEntrenadorForm";
 
 	private final EntrenadorService entrenadorService;
+	private final AthleteService athleteService;
 
 	@Autowired
-	public EntrenadorController(EntrenadorService entrenadorService, UserService userService, AuthoritiesService authoritiesService) {
+	public EntrenadorController(EntrenadorService entrenadorService, AthleteService athleteService, UserService userService, AuthoritiesService authoritiesService) {
 		this.entrenadorService = entrenadorService;
+		this.athleteService = athleteService;
 	}
 
 	@InitBinder
@@ -104,4 +108,21 @@ public class EntrenadorController {
 		mav.addObject(this.entrenadorService.findEntrenadorById(entrenadorId));
 		return mav;
 	}
+	
+	
+	@GetMapping("/entrenadores/{entrenadorId}/showAthletes")
+	public String athletesTrainedBy(@PathVariable("entrenadorId")int entrenadorId, ModelMap modelMap) {
+		String vista = "entrenadores/entrenados";
+		Set<Athlete> entrenados = this.athleteService.findAthleteByEntrenadorId(entrenadorId);
+		modelMap.addAttribute("entrenados", entrenados);
+		Entrenador entrenador = this.entrenadorService.findEntrenadorById(entrenadorId);
+		modelMap.addAttribute("entrenador", entrenador);
+		return vista;
+		
+	}
+	
+	
+	
+	
+	
 }
