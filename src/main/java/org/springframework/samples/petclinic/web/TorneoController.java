@@ -76,7 +76,7 @@ public class TorneoController {
 
 @GetMapping(value = "/edit/{torneoId}")
 public String editarTorneo(@PathVariable("torneoId") int torneoId, ModelMap model) {
-	System.out.println("hola");
+	
 	Optional<Torneo> torneo = this.torneoService.findTorneoById(torneoId);
 	
 	model.addAttribute("torneo", torneo.get() );
