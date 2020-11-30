@@ -30,7 +30,7 @@
 
 				<petclinic:menuItem active="${name eq 'pistas'}" url="/pistas"
 					title="pistas">
-					<span class="glyphicon glyphiconth-list" aria-hidden="true"></span>
+					<span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
 					<span>Pistas</span>
 				</petclinic:menuItem>
 
