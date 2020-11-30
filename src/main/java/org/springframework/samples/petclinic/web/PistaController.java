@@ -7,12 +7,15 @@ import javax.validation.Valid;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.model.Deporte;
+import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Pista;
 import org.springframework.samples.petclinic.service.PistaService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +27,11 @@ public class PistaController {
 	
 	@Autowired
 	private PistaService pistaService;
+	
+	@ModelAttribute("types")
+	public Collection<Deporte> populateDeportes() {
+		return this.pistaService.findDeportes();
+	}
 	
 	@GetMapping()
 	public String listadoPistas(ModelMap modelMap) {

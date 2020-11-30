@@ -95,6 +95,11 @@ INSERT INTO visits(id,pet_id,visit_date,description) VALUES (2, 8, '2013-01-02',
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (3, 8, '2013-01-03', 'neutered');
 INSERT INTO visits(id,pet_id,visit_date,description) VALUES (4, 7, '2013-01-04', 'spayed');
 
+INSERT INTO deportes VALUES (1, '100 metros');
+INSERT INTO deportes VALUES (2, '200 metros vallas');
+INSERT INTO deportes VALUES (3, 'Salto longitud');
+
+
 INSERT INTO entrenadores(id, first_name, last_name) VALUES (1, 'Paco', 'Fernández');
 INSERT INTO entrenadores(id, first_name, last_name) VALUES (2, 'Rosa', 'Fernández');
 
@@ -106,4 +111,9 @@ INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador
 INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(1,1,'2020-10-16','El deportista fue sancionado por saltarse una norma');
 INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(2,1,'2021-01-15','El deportista fue sancionado por saltarse una norma');
 INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(3,3,'2020-10-16','El deportista fue sancionado por saltarse una norma');
+
+INSERT INTO pistas(id,name,aforo,ciudad,deporte_id) VALUES(1,'Estadio de la Cartuja',40000,'Sevilla',1);
+INSERT INTO pistas(id,name,aforo,ciudad,deporte_id) VALUES(2,'Estadio Olimpico de Brasil',60000,'Rio de Janeiro',1);
+INSERT INTO pistas(id,name,aforo,ciudad,deporte_id) VALUES(3,'Wembley Stadium',75000,'Londres',3);
+
 
