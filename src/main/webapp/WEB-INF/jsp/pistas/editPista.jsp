@@ -15,6 +15,7 @@
             <petclinic:inputField label="Nombre" name="name"/>
                 <petclinic:inputField label="Ciudad" name="ciudad"/>
                 <petclinic:inputField label="Aforo" name="aforo"/>
+                <petclinic:inputField label="Deporte" name="deporte"/>
             </div>
 
             <div class="form-group">

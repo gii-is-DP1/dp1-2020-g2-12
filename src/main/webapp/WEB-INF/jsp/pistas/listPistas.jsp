@@ -16,6 +16,7 @@
             <th style="width: 150px;">Nombre</th>
             <th>Ciudad</th>
             <th>Aforo</th>
+            <th>Deporte</th>
             <th> Actions</th>
         </tr>
         </thead>
@@ -31,6 +32,9 @@
                 </td>
                 <td>
                     <c:out value="${pista.aforo}"/>
+                </td>
+                <td>
+                    <c:out value="${pista.deporte}"/>
                 </td>
                 
                  <td>

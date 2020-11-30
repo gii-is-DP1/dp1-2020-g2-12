@@ -14,4 +14,6 @@ public class Pista extends NamedEntity{
 	private Integer aforo;
 	@NotBlank
 	private String ciudad;
+	@NotBlank
+	private String deporte;
 }
