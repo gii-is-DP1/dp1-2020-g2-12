@@ -51,6 +51,7 @@
 		</c:forEach>
     </table>
      <spring:url value="/entrenadores/{entrenadorId}/athletes/{athleteId}/newSancion" var="newSancionUrl">
+        <spring:param name="entrenadorId" value="${athlete.entrenador.id}"/>
         <spring:param name="athleteId" value="${athlete.id}"/>
     </spring:url>
     <a href="${fn:escapeXml(newSancionUrl)}" class="btn btn-default">Sancionar</a>

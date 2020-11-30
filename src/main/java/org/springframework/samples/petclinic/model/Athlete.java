@@ -18,6 +18,12 @@ import javax.persistence.Table;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
 
+import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 @Entity
 @Table(name = "athletes")
 public class Athlete extends Person{
@@ -31,8 +37,7 @@ public class Athlete extends Person{
 	@Column(name = "genero")
 	private Genero genero;
 	
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "athlete", fetch = FetchType.EAGER)
-	@Fetch(value=FetchMode.SELECT)
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "athlete")
 	private Set<Sanción> sanciones;
 	
 	protected Set<Sanción> getSancionesInternal(){
@@ -46,10 +51,6 @@ public class Athlete extends Person{
 		this.sanciones = sanciones;
 	}
 	
-	public List<Sanción> getSanciones() {
-		List<Sanción> sanciones = new ArrayList<Sanción>(getSancionesInternal());
-		return Collections.unmodifiableList(sanciones);
-	}
 
 	public void addSancion(Sanción sancion) {
 		getSancionesInternal().add(sancion);
@@ -61,39 +62,9 @@ public class Athlete extends Person{
 	@JoinColumn(name = "entrenador_id")
 	private Entrenador entrenador;
 
-	public Double getHeight() {
-		return height;
-	}
-
-	public void setHeight(Double height) {
-		this.height = height;
-	}
-
-	public Double getWeight() {
-		return weight;
-	}
-
-	public void setWeight(Double weight) {
-		this.weight = weight;
-	}
-
-	public Genero getGenero() {
-		return genero;
-	}
-
-	public void setGenero(Genero genero) {
-		this.genero = genero;
-	}
-
-	public Entrenador getEntrenador() {
-		return entrenador;
-	}
-
-	public void setEntrenador(Entrenador entrenador) {
-		this.entrenador = entrenador;
-	}
-
-		
+	
+}	
 	
 	
-}
+	
+	

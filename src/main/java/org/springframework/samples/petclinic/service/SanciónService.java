@@ -3,10 +3,12 @@ package org.springframework.samples.petclinic.service;
 import java.time.LocalDate;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.model.Athlete;
 import org.springframework.samples.petclinic.model.Sanción;
 import org.springframework.samples.petclinic.repository.AthleteRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
@@ -39,34 +41,36 @@ public class SanciónService {
 		return (int) sancionRepo.count();
 	}
 	
-//	@Transactional
-//	public boolean esSancionado(int deportista_id) {
-//		boolean sancionado = false;
-//		LocalDate fechaActual = LocalDate.now();
-//		Set<Sanción> sanciones=findSancionByDeportistaId(deportista_id);
-//		if(!sanciones.isEmpty()) {
-//			for(Sanción s:sanciones) {
-//				if(s.getFechaFin().isAfter(fechaActual)) {
-//					sancionado = true;
-//					break;
-//				}
-//			}
-//		}
-//		return sancionado;
-//	}
+	@Transactional
+	public boolean esSancionado(int athleteId) {
+		boolean sancionado = false;
+		LocalDate fechaActual = LocalDate.now();
+		Set<Sanción> sanciones=findSancionByAthleteId(athleteId);
+		if(!sanciones.isEmpty()) {
+			for(Sanción s:sanciones) {
+				if(s.getFechaFin().isAfter(fechaActual)) {
+					sancionado = true;
+				}
+			}
+		}
+		return sancionado;
+	}
 	
-//	@Transactional
-//	Set<Sanción> findSancionByDeportistaId(int deportista_id){
-//		Optional<Deportista> res;		
-//		res=deportistaRepo.findById(deportista_id);
-//		return res.get().getSanciones();
-//	}
+	@Transactional
+	Set<Sanción> findSancionByAthleteId(int athleteId){
+		return sancionRepo.findByAthleteId(athleteId);
+	}
 	
 	@Transactional
 	public Sanción saveSanción(Sanción sancion) {
 		return sancionRepo.save(sancion);
 	}
-
+	
+	@Transactional
+	public void deleteSanción(Sanción sancion) {
+		sancionRepo.delete(sancion);
+	}
+	
 	@Transactional
 	public Optional<Sanción> findSancionById(int sancionId) {
 		

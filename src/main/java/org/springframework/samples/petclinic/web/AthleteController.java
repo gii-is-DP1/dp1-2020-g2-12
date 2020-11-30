@@ -99,7 +99,7 @@ public class AthleteController {
 			this.athleteService.save(athleteToUpdate); 
 			return "redirect:/entrenadores/{entrenadorId}";
 		}
-		
 	}
-	
 }
+
+	

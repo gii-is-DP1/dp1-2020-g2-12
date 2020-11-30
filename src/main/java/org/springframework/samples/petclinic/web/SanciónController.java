@@ -29,14 +29,15 @@ public class SanciónController {
 		String view="athletes/newSancion";
 		Athlete athlete = this.athleteService.findAthleteById(athleteId);
 		Sanción sancion = new Sanción();
-		sancion.setAthlete(athlete);
+		athlete.addSancion(sancion);
 		modelMap.addAttribute("sancion", sancion);
 		return view;
 	}
 	
 	@PostMapping(value = "/athletes/{athleteId}/newSancion")
-	public String processNewSancionForm(@PathVariable("athleteId")int athleteId, @Valid Sanción sancion, BindingResult result) {
+	public String processNewSancionForm(@PathVariable("athleteId")int athleteId, @Valid Sanción sancion, BindingResult result,final ModelMap model) {
 		if (result.hasErrors()) {
+			model.put("sancion", sancion);
 			return "athletes/newSancion";
 		}
 		else {
@@ -44,6 +45,7 @@ public class SanciónController {
 			sancion.setAthlete(athlete);
 			athlete.addSancion(sancion);
 			this.athleteService.saveSancion(sancion);
+			this.athleteService.save(athlete);
 			return "redirect:/entrenadores/{entrenadorId}/athletes/{athleteId}";
 		}
 	}

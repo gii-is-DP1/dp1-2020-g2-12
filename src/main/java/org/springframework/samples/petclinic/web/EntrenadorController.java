@@ -2,6 +2,7 @@ package org.springframework.samples.petclinic.web;
 
 import java.util.Collection;
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 import javax.validation.Valid;
@@ -11,6 +12,7 @@ import org.springframework.samples.petclinic.model.Athlete;
 import org.springframework.samples.petclinic.model.Entrenador;
 import org.springframework.samples.petclinic.model.Owner;
 import org.springframework.samples.petclinic.model.Pet;
+import org.springframework.samples.petclinic.model.Torneo;
 import org.springframework.samples.petclinic.service.AthleteService;
 import org.springframework.samples.petclinic.service.AuthoritiesService;
 import org.springframework.samples.petclinic.service.EntrenadorService;
@@ -37,7 +39,8 @@ public class EntrenadorController {
 	private final AthleteService athleteService;
 
 	@Autowired
-	public EntrenadorController(EntrenadorService entrenadorService, AthleteService athleteService, UserService userService, AuthoritiesService authoritiesService) {
+	public EntrenadorController(EntrenadorService entrenadorService, AthleteService athleteService,
+			UserService userService, AuthoritiesService authoritiesService) {
 		this.entrenadorService = entrenadorService;
 		this.athleteService = athleteService;
 	}
@@ -58,23 +61,20 @@ public class EntrenadorController {
 	public String processCreationForm(@Valid Entrenador entrenador, BindingResult result) {
 		if (result.hasErrors()) {
 			return VIEWS_ENTRENADOR_CREATE_OR_UPDATE_FORM;
-		}
-		else {
+		} else {
 			this.entrenadorService.save(entrenador);
-			
+
 			return "redirect:/entrenadores/" + entrenador.getId();
 		}
 	}
 
-	
-
 	@GetMapping("/entrenadores")
 	public String athletesList(ModelMap modelMap) {
 		String vista = "entrenadores/listEntrenadores";
-		Iterable<Entrenador> entrenadores= entrenadorService.findAll();
+		Iterable<Entrenador> entrenadores = entrenadorService.findAll();
 		modelMap.addAttribute("entrenadores", entrenadores);
 		return vista;
-		
+
 	}
 
 	@GetMapping(value = "/entrenadores/{entrenadorId}/edit")
@@ -89,8 +89,7 @@ public class EntrenadorController {
 			@PathVariable("entrenadorId") int entrenadorId) {
 		if (result.hasErrors()) {
 			return VIEWS_ENTRENADOR_CREATE_OR_UPDATE_FORM;
-		}
-		else {
+		} else {
 			entrenador.setId(entrenadorId);
 			this.entrenadorService.save(entrenador);
 			return "redirect:/entrenadores/{entrenadorId}";
@@ -99,6 +98,7 @@ public class EntrenadorController {
 
 	/**
 	 * Custom handler for displaying an owner.
+	 * 
 	 * @param ownerId the ID of the owner to display
 	 * @return a ModelMap with the model attributes for the view
 	 */
@@ -108,21 +108,42 @@ public class EntrenadorController {
 		mav.addObject(this.entrenadorService.findEntrenadorById(entrenadorId));
 		return mav;
 	}
-	
-	
+
 	@GetMapping("/entrenadores/{entrenadorId}/showAthletes")
-	public String athletesTrainedBy(@PathVariable("entrenadorId")int entrenadorId, ModelMap modelMap) {
+	public String atletasEntrenadosPor(@PathVariable("entrenadorId") int entrenadorId, ModelMap modelMap) {
 		String vista = "entrenadores/entrenados";
 		Set<Athlete> entrenados = this.athleteService.findAthleteByEntrenadorId(entrenadorId);
 		modelMap.addAttribute("entrenados", entrenados);
 		Entrenador entrenador = this.entrenadorService.findEntrenadorById(entrenadorId);
 		modelMap.addAttribute("entrenador", entrenador);
 		return vista;
+
+	}
+
+	@GetMapping(path = "/entrenadores/{entrenadorId}/delete/{athleteId}")
+	public String eliminarEntrenado(@PathVariable("entrenadorId") int entrenadorId, @PathVariable("athleteId") int athleteId, ModelMap modelMap) {
+		this.athleteService.eliminarEntrenadorDeAtleta(athleteId);
+		return "redirect:/entrenadores/{entrenadorId}";
 		
 	}
 	
+	@GetMapping(path = "/entrenadores/{entrenadorId}/add")
+	public String buscarEntrenado(@PathVariable("entrenadorId") int entrenadorId, ModelMap modelMap) {
+		Set <Athlete> atletas = this.athleteService.buscarAtletaSinEntrenador();
+		Entrenador entrenador = this.entrenadorService.findEntrenadorById(entrenadorId);
+		modelMap.addAttribute("atletas", atletas);
+		modelMap.addAttribute("entrenador", entrenador);
+		String vista = "entrenadores/entrenados";
+		return vista;
+		
+	}
 	
-	
-	
-	
+	@GetMapping(path = "/entrenadores/{entrenadorId}/add/{athleteId}")
+	public String añadirEntrenado(@PathVariable("entrenadorId") int entrenadorId, @PathVariable("athleteId") int athleteId, ModelMap modelMap) {
+		Athlete atleta = this.athleteService.findAthleteById(athleteId);
+		this.athleteService.añadirEntrenadorDeAtleta(athleteId,entrenadorId);
+		return "redirect:/entrenadores/{entrenadorId}";
+		
+	}
+
 }
