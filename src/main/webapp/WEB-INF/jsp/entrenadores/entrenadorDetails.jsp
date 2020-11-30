@@ -58,9 +58,5 @@
         </c:forEach>
     </table>
 
-    <spring:url value="{entrenadorId}/add" var="addAthleteUrl">
-        <spring:param name="entrenadorId" value="${entrenador.id}"/>
-    </spring:url>
-    <a href="${fn:escapeXml(addAthleteUrl)}" class="btn btn-default">Add Athlete</a>
 
 </petclinic:layout>

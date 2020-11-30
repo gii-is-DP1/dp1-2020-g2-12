@@ -99,11 +99,11 @@ INSERT INTO entrenadores(id, first_name, last_name) VALUES (1, 'Paco', 'Fernánd
 INSERT INTO entrenadores(id, first_name, last_name) VALUES (2, 'Rosa', 'Fernández');
 
 
-INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (1,'Lucas','Martínez',1.80,80.0,1,1);
-INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (2,'María','Martínez',1.80,80.0,2,2);
-INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (3,'Carlos','Martínez',1.80,80.0,1,1);
+--INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (1,'Lucas','Martínez',1.80,80.0,1,1);
+--INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (2,'María','Martínez',1.80,80.0,2,2);
+--INSERT INTO athletes(id, first_name,last_name, height, weight, genero,entrenador_id) VALUES (3,'Carlos','Martínez',1.80,80.0,1,1);
 
-INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(1,1,'2020-10-16','El deportista fue sancionado por saltarse una norma');
-INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(2,1,'2021-01-15','El deportista fue sancionado por saltarse una norma');
-INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(3,3,'2020-10-16','El deportista fue sancionado por saltarse una norma');
+--INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(1,1,'2020-10-16','El deportista fue sancionado por saltarse una norma');
+--INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(2,1,'2021-01-15','El deportista fue sancionado por saltarse una norma');
+--INSERT INTO sanciones(id,athlete_id,fecha_fin,descripcion) VALUES(3,3,'2020-10-16','El deportista fue sancionado por saltarse una norma');
 
