@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 <%@ page session="false" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -36,8 +34,6 @@
             </tr>
         </c:forEach>
         </tbody>
-         <sec:authorize access="hasAuthority('admin')">
-		<a class="btn btn-default" href='<spring:url value="/athlete/new" htmlEscape="true"/>'>Add Athlete</a>
-		</sec:authorize>
+         
     </table>
 </petclinic:layout>
