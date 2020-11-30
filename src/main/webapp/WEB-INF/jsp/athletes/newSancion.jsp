@@ -16,7 +16,7 @@
     <jsp:body>
         <h2><c:if test="${sancion['new']}">Nueva </c:if>Sancion</h2>
 
-        <h3>Achtlete: <c:out value="${sancion.athlete.firstName} ${sancion.athlete.lastName}"/></h3>
+        <h3>Ahtlete: <c:out value="${sancion.athlete.firstName} ${sancion.athlete.lastName}"/></h3>
         
         <form:form modelAttribute="sancion" class="form-horizontal">
             <div class="form-group has-feedback">

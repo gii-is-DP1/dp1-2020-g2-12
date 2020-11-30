@@ -22,28 +22,28 @@ public class SanciónServiceTests {
 		int count=sancionService.sancCount();
 		assertEquals(count,3);
 	}
-//	
-//	@Test
-//	public void SancionesIdDeportista() {
-//		Set<Sanción> sanciones=sancionService.findSancionByDeportistaId(3);
-//		assertEquals(sanciones.size(),1);
-//	}
-//	
-//	@Test
-//	public void testEsDeportistaSancionadoFechafutura() {
-//		boolean sancionado=sancionService.esSancionado(3);
-//		assertEquals(sancionado,true);
-//	}
-//	@Test
-//	public void testEsDeportistaSancionadoFechaAnterior() {
-//		boolean sancionado=sancionService.esSancionado(2);
-//		assertEquals(sancionado,false);
-//	}
-//	@Test
-//	public void testEsDeportistaNoSancionado() {
-//		boolean sancionado=sancionService.esSancionado(1);
-//		assertEquals(sancionado,false);
-//	}
-//	
+	
+	@Test
+	public void SancionesByDeportista() {
+		Set<Sanción> sanciones=sancionService.findSancionByAthleteId(2);
+		assertEquals(sanciones.size(),0);
+	}
+	
+	@Test
+	public void testEsDeportistaSancionadoFechafutura() {
+		boolean sancionado=sancionService.esSancionado(1);
+		assertEquals(sancionado,true);
+	}
+	@Test
+	public void testEsDeportistaSancionadoFechaAnterior() {
+		boolean sancionado=sancionService.esSancionado(3);
+		assertEquals(sancionado,false);
+	}
+	@Test
+	public void testEsDeportistaNoSancionado() {
+		boolean sancionado=sancionService.esSancionado(2);
+		assertEquals(sancionado,false);
+	}
+	
 	
 }

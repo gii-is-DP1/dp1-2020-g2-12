@@ -1,4 +1,3 @@
-  
 package org.springframework.samples.petclinic.model;
 
 import java.util.HashSet;
@@ -12,7 +11,6 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
-
 @Data
 @Getter
 @Setter
@@ -34,6 +32,5 @@ public class Entrenador extends Person {
 		}
 		return this.athletes;
 	}
-	
-	
 }
+

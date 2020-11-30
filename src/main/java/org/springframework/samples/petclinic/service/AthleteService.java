@@ -64,4 +64,19 @@ public class AthleteService {
 	public Set<Athlete> findAthleteByEntrenadorId(int entrenadorId) {
 		return athleteRepository.findByEntrenadorId(entrenadorId);
 	}
+	
+	public void eliminarEntrenadorDeAtleta(int i) {
+		athleteRepository.eliminarEntrenadorDeAtleta(i);
+
+	}
+
+	public Set<Athlete> buscarAtletaSinEntrenador() {
+		return athleteRepository.buscarAtletaSinEntrenador();
+	}
+
+	public void añadirEntrenadorDeAtleta(int athleteId, int entrenadorId) {
+		athleteRepository.añadirEntrenadorDeAtleta(athleteId,entrenadorId);
+
+	}
+
 }
