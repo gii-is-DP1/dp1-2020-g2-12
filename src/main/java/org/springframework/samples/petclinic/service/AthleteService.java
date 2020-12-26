@@ -49,13 +49,6 @@ public class AthleteService {
 		athleteRepository.deleteById(athleteId);
 	}
 	
-	
-	@Transactional
-	public void saveSancion(Sanción sancion) throws DataAccessException {
-		sancionRepo.save(sancion);
-		
-	}
-	
 	@Transactional(readOnly = true)
 	public Athlete findAthleteById(int id) throws DataAccessException{
 		return athleteRepository.findById(id).get();

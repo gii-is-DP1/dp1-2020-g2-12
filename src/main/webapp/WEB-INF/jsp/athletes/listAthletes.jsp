@@ -12,8 +12,7 @@
         <thead>
         <tr>
             <th style="width: 200px;">Name</th>
-            <th style="width: 150px;">Height</th>
-            <th style="width: 150px;">Weight</th>
+            
         </tr>
         </thead>
         <tbody>

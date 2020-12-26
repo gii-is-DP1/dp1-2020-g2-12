@@ -2,6 +2,7 @@ package org.springframework.samples.petclinic.model;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.time.LocalDate;
 import java.util.Locale;
 import java.util.Set;
 
@@ -40,5 +41,21 @@ class ValidatorTests {
 		assertThat(violation.getPropertyPath().toString()).isEqualTo("firstName");
 		assertThat(violation.getMessage()).isEqualTo("must not be empty");
 	}
+	
+	@Test
+	void shouldNotValidateSancionWhenDescripcionEmpty() {
 
+		Sanción sancion = new Sanción();
+		sancion.setFechaFin(LocalDate.of(2021, 1, 23));
+		sancion.setDescripcion("");
+
+		Validator validator = createValidator();
+		Set<ConstraintViolation<Sanción>> constraintViolations = validator.validate(sancion);
+
+		assertThat(constraintViolations.size()).isEqualTo(1);
+		ConstraintViolation<Sanción> violation = constraintViolations.iterator().next();
+		assertThat(violation.getPropertyPath().toString()).isEqualTo("descripcion");
+		assertThat(violation.getMessage()).isEqualTo("must not be empty");
+	}
+	
 }

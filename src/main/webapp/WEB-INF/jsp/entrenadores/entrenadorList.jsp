@@ -14,7 +14,7 @@
         <thead>
         <tr>
             <th style="width: 250px;">Nombre</th>
-            <th>Athletes</th>
+            <th>Entrenadores</th>
         </tr>
         </thead>
         <tbody>
@@ -28,11 +28,8 @@
                     </spring:url>
                     <a href="${fn:escapeXml(entrenadorUrl)}"><c:out value="${entrenador.firstName} ${entrenador.lastName}"/></a>
                 </td>
-               
-                <td>
-               <c:forEach var="athlete" items="${entrenador.athletes}">
-               <c:out value="${athlete.firstName} ${athlete.lastName}"/>
-               </c:forEach>
+               <td>
+                    <a href="${fn:escapeXml(entrenadorUrl)}"><c:out value="${entrenador.lastName}"/></a>
                 </td>
             </tr>
         </c:forEach>

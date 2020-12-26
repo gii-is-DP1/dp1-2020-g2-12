@@ -85,7 +85,7 @@ public class AthleteController {
 			}
 		}
 	
-	@GetMapping(value= "/entrenadores/{entrenadorId}/athletes/{athleteId}/edit")
+	@GetMapping(value= "/athletes/{athleteId}/edit")
 	public String initUpdateForm(@PathVariable("athleteId") int athleteId, ModelMap model) {
 		Athlete athlete = this.athleteService.findAthleteById(athleteId);
 		boolean edit = true;
@@ -94,7 +94,7 @@ public class AthleteController {
 		return VIEWS_ATHLETE_CREATE_OR_UPDATE_FORM;
 	}
 	
-	@PostMapping(value = "/entrenadores/{entrenadorId}/athletes/{athleteId}/edit")
+	@PostMapping(value = "/athletes/{athleteId}/edit")
 	public String processUpdateForm(@Valid Athlete athlete, BindingResult result,@PathVariable("athleteId") int athleteId, ModelMap model) {		
 		
 		boolean edit = true;
@@ -107,7 +107,7 @@ public class AthleteController {
 			Athlete athleteToUpdate=this.athleteService.findAthleteById(athleteId);
 			BeanUtils.copyProperties(athlete, athleteToUpdate, "id","entrenador"); 
 			this.athleteService.save(athleteToUpdate); 
-			return "redirect:/entrenadores/{entrenadorId}";
+			return "redirect:/athletes/{athleteId}";
 		}
 		
 	}
@@ -121,7 +121,7 @@ public class AthleteController {
 		
 	}
 	
-	@GetMapping(value = "/entrenadores/{entrenadorId}/athletes/{athleteId}")
+	@GetMapping(value = "/athletes/{athleteId}")
 	public String showAthlete(@PathVariable("athleteId") int athleteId, ModelMap modelMap) {
 		Athlete athlete = this.athleteService.findAthleteById(athleteId);
 		modelMap.addAttribute("athlete",athlete);

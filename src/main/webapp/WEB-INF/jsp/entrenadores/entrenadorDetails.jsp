@@ -26,8 +26,7 @@
     <table class="table table-striped">
         <c:forEach var="athlete" items="${entrenador.athletes}">
        <h2><b> 
-       		<spring:url value="{entrenadorId}/athletes/{athleteId}" var="athleteUrl">
-            <spring:param name="entrenadorId" value="${entrenador.id}"/>
+       		<spring:url value="/athletes/{athleteId}" var="athleteUrl">
             <spring:param name="athleteId" value="${athlete.id}"/>
             </spring:url>
             <a href="${fn:escapeXml(athleteUrl)}"><c:out value="${athlete.firstName} ${athlete.lastName}"/></a></b></h2>

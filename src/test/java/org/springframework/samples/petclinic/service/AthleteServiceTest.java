@@ -19,7 +19,7 @@ public class AthleteServiceTest {
 	@Test
 	public void testCountWithInitialData() {
 		int count=athleteService.athleteCount();
-		assertEquals(count,3);
+		assertEquals(count,4);
 	}
 
 	@Test

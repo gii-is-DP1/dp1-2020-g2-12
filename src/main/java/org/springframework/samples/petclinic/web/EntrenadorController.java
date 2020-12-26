@@ -69,7 +69,7 @@ public class EntrenadorController {
 	}
 
 	@GetMapping("/entrenadores")
-	public String athletesList(ModelMap modelMap) {
+	public String entrenadoresList(ModelMap modelMap) {
 		String vista = "entrenadores/entrenadorList";
 		Iterable<Entrenador> entrenadores = entrenadorService.findAll();
 		modelMap.addAttribute("entrenadores", entrenadores);
