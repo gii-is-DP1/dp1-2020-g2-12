@@ -74,7 +74,6 @@ public class EntrenadorController {
 		Iterable<Entrenador> entrenadores = entrenadorService.findAll();
 		modelMap.addAttribute("entrenadores", entrenadores);
 		return vista;
-
 	}
 
 	@GetMapping(value = "/entrenadores/{entrenadorId}/edit")
@@ -143,7 +142,6 @@ public class EntrenadorController {
 		Athlete atleta = this.athleteService.findAthleteById(athleteId);
 		this.athleteService.añadirEntrenadorDeAtleta(athleteId,entrenadorId);
 		return "redirect:/entrenadores/{entrenadorId}";
-		
 	}
 
 }

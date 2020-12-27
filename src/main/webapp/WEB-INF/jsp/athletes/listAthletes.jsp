@@ -19,7 +19,7 @@
         <c:forEach items="${athletes}" var="athlete">
             <tr>
                 <td>
-                    <spring:url value="/athlete/{athleteId}" var="athleteUrl">
+                    <spring:url value="/athletes/{athleteId}" var="athleteUrl">
                         <spring:param name="athleteId" value="${athlete.id}"/>
                     </spring:url>
                     <a href="${fn:escapeXml(athleteUrl)}"><c:out value="${athlete.firstName} ${athlete.lastName}"/></a>

@@ -3,6 +3,7 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="petclinic" tagdir="/WEB-INF/tags" %>
+
 <petclinic:layout pageName="entrenadores">
     <h2>Entrenador</h2>
     <table class="table table-striped">
@@ -11,14 +12,17 @@
             <td><b><c:out value="${entrenador.firstName} ${entrenador.lastName}"/></b></td>
         </tr>
     </table>
+
     <spring:url value="{entrenadorId}/edit" var="editUrl">
         <spring:param name="entrenadorId" value="${entrenador.id}"/>
     </spring:url>
     <a href="${fn:escapeXml(editUrl)}" class="btn btn-default">Edit Entrenador</a>
+
     <spring:url value="{entrenadorId}/athletes/new" var="addUrl">
         <spring:param name="entrenadorId" value="${entrenador.id}"/>
     </spring:url>
     <a href="${fn:escapeXml(addUrl)}" class="btn btn-default">Add New Athlete</a>
+
     <br/>
     <br/>
     <br/>
@@ -56,6 +60,11 @@
     <br/>
         </c:forEach>
     </table>
+   
+    <spring:url value="{entrenadorId}/add" var="addAthleteUrl">
+        <spring:param name="entrenadorId" value="${entrenador.id}"/>
+    </spring:url>
+    <a href="${fn:escapeXml(addAthleteUrl)}" class="btn btn-default">Add Athlete</a>
 
 
 </petclinic:layout>
