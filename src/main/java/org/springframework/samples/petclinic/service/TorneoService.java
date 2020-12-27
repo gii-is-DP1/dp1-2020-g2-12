@@ -2,13 +2,16 @@ package org.springframework.samples.petclinic.service;
 
 import java.util.HashSet;
 import java.util.Optional;
+import java.util.Set;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.samples.petclinic.model.Athlete;
 import org.springframework.samples.petclinic.model.Pista;
 import org.springframework.samples.petclinic.model.Torneo;
 import org.springframework.samples.petclinic.repository.PistaRepository;
+import org.springframework.samples.petclinic.repository.SanciónRepository;
 import org.springframework.samples.petclinic.repository.TorneoRepostitory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -18,6 +21,8 @@ public class TorneoService {
 
 	@Autowired
 	private TorneoRepostitory torneoRepo;
+	@Autowired
+	private SanciónService sancionService;
 	
 	@Transactional
 	public int torneoCount() {
@@ -34,9 +39,7 @@ public class TorneoService {
 	}
 
 	public void save(Torneo torneo) {
-		torneo.setParticipantes(new HashSet<>());
 		torneoRepo.save(torneo);
-		
 	}
 
 	public Optional<Torneo> findTorneoById(int torneoId) {

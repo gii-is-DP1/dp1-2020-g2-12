@@ -44,14 +44,23 @@
                         <dt>Fecha de finalizacion</dt>
                         <dd><petclinic:localDate date="${sancion.fechaFin}" pattern="yyyy-MM-dd"/></dd>
                         <dt>Descripcion</dt>
-                        <dd><c:out value="${sancion.descripción}"/></dd>
-                        
-                    </dl>
+                        <dd><c:out value="${sancion.descripcion}"/></dd>
+                        </dl>
+                        <spring:url value="/athletes/{athleteId}/delete/{sancionId}" var="deleteSancionUrl">
+       						<spring:param name="athleteId" value="${athlete.id}"/>
+       						<spring:param name="sancionId" value="${sancion.id}"/>
+  						</spring:url>
+  						 <spring:url value="/athletes/{athleteId}/editSancion/{sancionId}" var="editSancionUrl">
+       						<spring:param name="athleteId" value="${athlete.id}"/>
+       						<spring:param name="sancionId" value="${sancion.id}"/>
+  						</spring:url>
+  						<%--<a href="${fn:escapeXml(editSancionUrl)}" class="btn btn-default">Editar</a>--%>
+    					<a href="${fn:escapeXml(deleteSancionUrl)}" class="btn btn-default">Eliminar</a>
+                    
                 </td>
 		</c:forEach>
     </table>
-     <spring:url value="/entrenadores/{entrenadorId}/athletes/{athleteId}/newSancion" var="newSancionUrl">
-        <spring:param name="entrenadorId" value="${athlete.entrenador.id}"/>
+     <spring:url value="{athleteId}/newSancion" var="newSancionUrl">
         <spring:param name="athleteId" value="${athlete.id}"/>
     </spring:url>
     <a href="${fn:escapeXml(newSancionUrl)}" class="btn btn-default">Sancionar</a>

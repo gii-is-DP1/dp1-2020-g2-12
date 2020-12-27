@@ -11,14 +11,15 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.Fetch;
 import org.hibernate.annotations.FetchMode;
+import org.springframework.samples.petclinic.service.exceptions.AddParticipanteSancionadoException;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +28,7 @@ import lombok.Setter;
 @Entity
 @Table(name = "athletes")
 public class Athlete extends Person{
-	
+
 	@Column(name = "height") 
 	private Double height;
 	
@@ -61,8 +62,35 @@ public class Athlete extends Person{
 	@ManyToOne
 	@JoinColumn(name = "entrenador_id")
 	private Entrenador entrenador;
-
 	
+	@ManyToMany
+	@JoinColumn(name = "torneo_id")
+	private Set<Torneo> torneos;
+	
+	protected Set<Torneo> getTorneosInternal(){
+		if (this.torneos == null) {
+			this.torneos = new HashSet<>();
+		}
+		return this.torneos;
+	}
+
+	protected void setTorneosInternal(Set<Torneo> torneos) {
+		this.torneos = torneos;
+	}
+	
+
+	public void addTorneo(Torneo torneo) {
+		try {
+			torneo.addParticipante(this);
+			getTorneosInternal().add(torneo);
+		} catch (AddParticipanteSancionadoException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public Set<Torneo> getTorneos() {
+		return this.getTorneosInternal();
+	}
 }	
 	
 	

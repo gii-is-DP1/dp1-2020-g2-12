@@ -49,34 +49,29 @@ public class AthleteService {
 		athleteRepository.deleteById(athleteId);
 	}
 	
-	
-	@Transactional
-	public void saveSancion(Sanción sancion) throws DataAccessException {
-		sancionRepo.save(sancion);
-		
-	}
-	
 	@Transactional(readOnly = true)
 	public Athlete findAthleteById(int id) throws DataAccessException{
 		return athleteRepository.findById(id).get();
 	}
 	
+	@Transactional
 	public Set<Athlete> findAthleteByEntrenadorId(int entrenadorId) {
 		return athleteRepository.findByEntrenadorId(entrenadorId);
 	}
 	
+	@Transactional
 	public void eliminarEntrenadorDeAtleta(int i) {
 		athleteRepository.eliminarEntrenadorDeAtleta(i);
-
 	}
-
+	
+	@Transactional
 	public Set<Athlete> buscarAtletaSinEntrenador() {
 		return athleteRepository.buscarAtletaSinEntrenador();
 	}
-
+	
+	@Transactional
 	public void añadirEntrenadorDeAtleta(int athleteId, int entrenadorId) {
 		athleteRepository.añadirEntrenadorDeAtleta(athleteId,entrenadorId);
-
 	}
 
 }
